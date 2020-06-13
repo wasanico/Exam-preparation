@@ -83,5 +83,7 @@ def checkregexcrossword(linesregex, columnregex, answer):
                 
                 
                 print("at line",a,":",l,"and column",b,":",c,"answer :",answer[a][b],"result :",p.match(separator.join(answer[a])),"hello there",q.match(separator.join(word[b])))
+        else :
+            print("not working fo line", a)
 
 checkregexcrossword(lines, columns, answers)
