@@ -4,14 +4,14 @@
 #Exo 1.1 : reductor
 
 
-# def reduce(func, L, output):
-#     reduced = output
-#     for elem in L:
-#         reduced.append(min(elem,func))   
-#     return reduced
+def reduce(func, L, output):
+    reduced = output
+    for elem in L:
+        reduced.append(min(elem,func))   
+    return reduced
 
-# def limitMax(maximum):
-#     return maximum
+def limitMax(maximum):
+    return maximum
 
 # print(reduce(limitMax(3), [1, 2, 3, 4, 5, 6], [])) # return [1, 2, 3, 3, 3, 3]
 
@@ -26,7 +26,7 @@ def zero(fn, inf, sup):
     a = fn(inf) 
     b = fn(sup)
     if (a > 0 and  b<0) or (a < 0 and b>0):        
-        #there exist a racine between the two so then we add the inf with a to have a new bborder closer to what we want
+        #there exists a racine between the two so then we add the inf with a to have a new bborder closer to what we want
         newinf = inf + a
         newsup = sup + b
         print("new borders :",newinf,newsup)
