@@ -62,8 +62,8 @@ def password(correct_pswd):
 def add(a, b):
     return a + b
 
-# print(add("secret", 1, 2)) # ValueError Exception
-# print(add("yeet", 1, 2)) # 3
+# print(add("yee", 1, 2)) # ValueError Exception
+# print(add("secret", 1, 2)) # 3
 
 
 #Exo 1.4 : Trees
@@ -76,18 +76,18 @@ class Tree:
         self.right = right
 
 
-def treeMax(tree):      #find the greatest value of the tree
-    print(tree)
 
+def treeMax(tree):      #find the highest value of the tree
+    val = tree.value
+    r_max = -100
+    l_max = -100
+    if tree.left != None:        
+        l_max = treeMax(tree.left)      #recursion   
+    if tree.right != None:
+        r_max = treeMax(tree.right)
+    return max(val,r_max,l_max)
+    
 
+t = Tree(0, Tree(4, Tree(-5), Tree(3, Tree(8), Tree(1))), Tree(2, Tree(4)))
 
-t = Tree(0,
-        Tree(4, 
-            Tree(-5), 
-            Tree(3, 
-                Tree(8), 
-                Tree(1))),
-        Tree(2, 
-            Tree(4)))
-
-treeMax(t)
+print(treeMax(t))
